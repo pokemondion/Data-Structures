@@ -11,6 +11,21 @@ public class DoublyLinkedList <E> {
 			prev = p;
 			next = n;
 		}
+		public E getElement() {
+			return element;
+		}
+		public Node<E> getNext() { 
+			return next;
+		}
+		public Node<E> getPrev() { 
+			return prev;
+		}
+		public void setPrev(Node<E> p) {
+			prev = p;
+		}
+		public void setNext(Node<E> n) {
+			next = n;
+		}
 	}
 	
 	Node<E> head = null;
@@ -19,6 +34,10 @@ public class DoublyLinkedList <E> {
 	
 	public DoublyLinkedList() {
 		
+	}
+	
+	public int size() {
+		return size;
 	}
 	
 	public void addFirst(E e) {
@@ -43,6 +62,40 @@ public class DoublyLinkedList <E> {
 			tail = new Node<E>(e, tail, null);
 			size ++;
 		}
+	}
+	
+	public E first() {
+		if (isEmpty()) return null;
+		return head.getElement();
+	}
+	
+	public E last() {
+		if (isEmpty()) return null;
+		return tail.getElement();
+	}
+	
+	public E removeFirst() {
+		if (isEmpty()) return null;
+		Node<E> removed = head;
+		head = head.getNext();
+		head.setPrev(null);
+		size --;
+		if (isEmpty()) {
+			tail = null;
+		}
+		return removed.getElement();
+	}
+	
+	public E removeLast() {
+		if (isEmpty()) return null;
+		Node<E> removed = tail;
+		tail = tail.getPrev();
+		tail.setNext(null);
+		size --;
+		if (isEmpty()) {
+			head = null;
+		}
+		return removed.getElement();
 	}
 	
 	public boolean isEmpty() {
