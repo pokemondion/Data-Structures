@@ -1,6 +1,6 @@
 # Data-Structures
 <p>
-  These are Data Structures that I've learned after taking the class EECS 2011, Fundamentals of Data Structures.
+  Data Structures Fundamentals 
 </p>
 
 <p>
